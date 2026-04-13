@@ -49,12 +49,9 @@ export default function HistoryPage() {
     : null;
 
   return (
-    <div className="max-w-lg mx-auto px-4 pb-28 pt-6 space-y-4">
-      <div className="flex items-center justify-between mb-2">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Job History</h1>
-          <p className="text-sm text-muted-foreground mt-0.5">{jobs.length} job{jobs.length !== 1 ? "s" : ""} saved</p>
-        </div>
+    <div className="max-w-lg mx-auto px-4 pb-28 pt-4 space-y-4">
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-muted-foreground font-medium">{jobs.length} job{jobs.length !== 1 ? "s" : ""} saved</p>
         {jobs.length > 0 && (
           <AlertDialog>
             <AlertDialogTrigger asChild>
@@ -138,6 +135,17 @@ export default function HistoryPage() {
           ))}
         </div>
       )}
+
+      {/* Footer links */}
+      <div className="flex justify-center gap-4 pt-2 text-xs text-muted-foreground">
+        <button onClick={() => navigate("/about")} className="hover:text-foreground transition-colors">
+          About
+        </button>
+        <span aria-hidden="true">·</span>
+        <button onClick={() => navigate("/privacy")} className="hover:text-foreground transition-colors">
+          Privacy
+        </button>
+      </div>
     </div>
   );
 }

@@ -5,9 +5,36 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import CalculatorPage from "./pages/CalculatorPage";
 import HistoryPage from "./pages/HistoryPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
+
+export function AppLogo({ size = 28 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 512 512" aria-hidden="true">
+      <rect width="512" height="512" rx="96" fill="#2563eb" />
+      <text x="256" y="340" fontFamily="system-ui, -apple-system, sans-serif" fontSize="280" fontWeight="700" fill="#ffffff" textAnchor="middle">$</text>
+      <line x1="120" y1="400" x2="392" y2="400" stroke="#34d399" strokeWidth="28" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function Header() {
+  const navigate = useNavigate();
+
+  return (
+    <header className="sticky top-0 bg-background/95 backdrop-blur-sm z-10 border-b border-border shadow-sm">
+      <div className="max-w-lg mx-auto flex items-center justify-between px-4 py-3">
+        <button onClick={() => navigate("/")} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <AppLogo />
+          <h1 className="text-xl font-bold tracking-tight text-foreground">ProfitCalc</h1>
+        </button>
+      </div>
+    </header>
+  );
+}
 
 function BottomNav() {
   const location = useLocation();
@@ -15,12 +42,14 @@ function BottomNav() {
   const isCalc = location.pathname === "/" || location.pathname === "";
   const isHistory = location.pathname === "/history";
 
+  if (!isCalc && !isHistory) return null;
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-card/80 backdrop-blur-xl border-t z-50">
       <div className="max-w-lg mx-auto flex">
         <button
           onClick={() => navigate("/")}
-          className={`flex-1 flex flex-col items-center py-2.5 min-h-[56px] transition-all duration-200 ${
+          className={`flex-1 flex flex-col items-center py-2.5 min-h-[56px] transition-all duration-200 relative ${
             isCalc
               ? "text-primary"
               : "text-muted-foreground hover:text-foreground"
@@ -65,9 +94,12 @@ const App = () => (
       <Toaster />
       <Sonner />
       <HashRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<CalculatorPage />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <BottomNav />
