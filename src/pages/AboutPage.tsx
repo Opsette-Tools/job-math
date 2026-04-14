@@ -15,34 +15,35 @@ export default function AboutPage() {
         Back
       </button>
 
-      <h2 className="text-2xl font-bold text-foreground">About ProfitCalc</h2>
+      <h2 className="text-2xl font-bold text-foreground">About Job Math</h2>
 
       <p className="text-foreground font-medium text-base">
-        Know what you actually made on every job.
+        Quick math for business needs.
       </p>
 
       <p>
-        ProfitCalc is a free, offline-first calculator that shows you the real numbers
-        behind your jobs — net profit, margin, and effective hourly rate — so you can
-        price smarter and stop guessing.
+        Job Math is a free, offline-first calculator suite built for people who work
+        with their hands. Profit margins, deposit splits, late fees, time-to-money
+        conversions, and discount breakdowns — all in one place.
       </p>
 
       <div className="space-y-3">
-        <h3 className="text-foreground font-semibold">How It Works</h3>
-        <ol className="list-decimal list-inside space-y-2">
-          <li>Enter the amount you charged for the job</li>
-          <li>Add your costs — materials, labor, mileage, and other expenses</li>
-          <li>Enter how many hours you worked</li>
-          <li>See your real profit, margin, and effective hourly rate instantly</li>
-        </ol>
+        <h3 className="text-foreground font-semibold">Calculators</h3>
+        <ul className="list-disc list-inside space-y-1.5">
+          <li><strong className="text-foreground">Profit</strong> — net profit, margin, and effective hourly rate</li>
+          <li><strong className="text-foreground">Deposit</strong> — split a job total into deposit and balance</li>
+          <li><strong className="text-foreground">Late Fee</strong> — calculate fees on overdue invoices</li>
+          <li><strong className="text-foreground">Time to Money</strong> — convert hours worked to a dollar amount</li>
+          <li><strong className="text-foreground">Discount</strong> — price breakdown with discounts and optional tax</li>
+        </ul>
       </div>
 
       <div className="space-y-3">
         <h3 className="text-foreground font-semibold">Features</h3>
         <ul className="list-disc list-inside space-y-1.5">
           <li>Works offline — no internet needed after first visit</li>
-          <li>Save jobs to track your history</li>
-          <li>Share job summaries with a tap</li>
+          <li>Save profit calculations to track your history</li>
+          <li>Copy summaries to clipboard from any calculator</li>
           <li>Dark mode support</li>
           <li>Installable as an app on your phone</li>
         </ul>
@@ -52,7 +53,7 @@ export default function AboutPage() {
         <h3 className="text-foreground font-semibold">Built For</h3>
         <p>
           Freelancers, contractors, cleaners, handymen, landscapers, and anyone who
-          needs to know if a job was actually worth it.
+          needs quick, reliable math for their service business.
         </p>
       </div>
     </div>

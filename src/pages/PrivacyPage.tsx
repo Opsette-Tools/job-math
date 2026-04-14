@@ -17,12 +17,12 @@ export default function PrivacyPage() {
 
       <h2 className="text-2xl font-bold text-foreground">Privacy Policy</h2>
 
-      <p className="text-foreground font-medium text-base">ProfitCalc respects your privacy.</p>
+      <p className="text-foreground font-medium text-base">Job Math respects your privacy.</p>
 
       <div className="space-y-3">
         <h3 className="text-foreground font-semibold">No Data Collection</h3>
         <p>
-          ProfitCalc runs entirely in your browser. We do not collect, store, or transmit any
+          Job Math runs entirely in your browser. We do not collect, store, or transmit any
           personal information. All calculations happen locally on your device.
         </p>
       </div>

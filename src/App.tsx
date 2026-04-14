@@ -29,7 +29,7 @@ function Header() {
       <div className="max-w-lg mx-auto flex items-center justify-between px-4 py-3">
         <button onClick={() => navigate("/")} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <AppLogo />
-          <h1 className="text-xl font-bold tracking-tight text-foreground">ProfitCalc</h1>
+          <h1 className="text-xl font-bold tracking-tight text-foreground">Job Math</h1>
         </button>
       </div>
     </header>

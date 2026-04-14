@@ -4,7 +4,7 @@ import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig(({ command }) => ({
-  base: command === "build" ? "/profit-calc/" : "/",
+  base: command === "build" ? "/job-math/" : "/",
   server: {
     host: "::",
     port: 8080,
@@ -21,9 +21,9 @@ export default defineConfig(({ command }) => ({
         navigateFallbackDenylist: [/^\/~oauth/],
       },
       manifest: {
-        name: "Profit Calculator",
-        short_name: "ProfitCalc",
-        description: "Know what you actually made on every job",
+        name: "Job Math",
+        short_name: "Job Math",
+        description: "Quick math for business needs",
         start_url: "./",
         theme_color: "#2563eb",
         background_color: "#f5f6f8",
